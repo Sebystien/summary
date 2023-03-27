@@ -31,6 +31,10 @@
     /*gradient colors*/
     --linear-gradient: linear-gradient( rgba(105, 67, 255, 1), rgba(64, 44, 233, 1));
     --linear-gradient-1:linear-gradient(rgba(77, 33, 201, 1),rgba(37, 33, 201, 0));
+    
+    --fw-light: 500;
+    --fw-bold: 700;
+    --fw-extrabold: 800;
 
 }
 
@@ -38,12 +42,13 @@ html{
     box-sizing: border-box;
     font-size: 63.5%;
     font-family: 'Hanken Grotesk', sans-serif;
+    min-height: 100vh;
 }
 
 body{
     font-size: 1.6rem;
     line-height: 1.2;
-    height: 100%;
+    min-height: 100vh;
     
 }
 
@@ -51,6 +56,10 @@ img{
     width: 100%;
     height: auto;
 
+}
+
+.cards{
+    background-color: var(--clr-neutral-01);
 }
 
 
@@ -92,6 +101,10 @@ img{
 
 .cards--center{
     background-image: var(--linear-gradient-1);
+}
+
+.cards--center  >* :nth-child(2){
+    opacity: .5;
 }
 
 .cards--top{
@@ -205,6 +218,24 @@ img{
     font-size: 1.8rem;
 }
 
+.cards--bottom .box{
+    font-size: 1.6rem;
+    text-transform: capitalize;
+}
+
+.cards--bottom .box--left > *:first-child{
+    font-weight: var(--fw-bold);
+}
+
+.cards--bottom .box--left > *:nth-child(2){
+    opacity: .7;
+}
+
+.btn{
+    font-weight: var(--fw-bold);
+    font-size: 1.6rem;
+}
+
 
 /*------------* Space and Shape Only For Top Section*------------*/
 
@@ -256,3 +287,29 @@ img{
 Add a nice javascript counter 
 - Add a nice transition on both bottom and top. Mobile 
 */ 
+
+/*------------------------------------
+-
+- General Media Query layout
+-
+*------------------------------------*/
+
+@media ( min-width: 900px){
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: black;
+    }
+
+    .cards{
+        display: flex;
+        border-radius: 3.2rem;
+    }
+
+    .cards--top{
+        border-radius: 3.2rem;
+    }
+
+    
+}
